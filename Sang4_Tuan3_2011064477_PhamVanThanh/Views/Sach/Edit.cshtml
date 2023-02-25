@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<fieldset>
+    <div class="editor-field">
+        Tên sách:
+        @Html.TextBox("tensach");
+        @ViewData["Error"]
+    </div>
+    <div class="editor-field">
+        Hình:
+        @Html.TextBox("hinh");
+        @ViewData["Error"]
+    </div>
+    <p>
+        <input type="submit" value="Save" />
+    </p>
+</fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
